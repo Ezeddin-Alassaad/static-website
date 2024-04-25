@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delicious Bites - Members</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Internal CSS for member list */
+    #member-list {
+      list-style: none;  /* Remove default bullet points */
+      padding: 0;
+      margin: 0;
+    }
+
+    #member-list li {
+      margin-bottom: 10px;
+      font-size: 18px;
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="members-information.html">Members Information</a></li>
+        <li><a href="foods.html">Foods</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1 style="font-size: 48px; text-align: center;">Our Group Members</h1>
+
+  <ul id="member-list"></ul>
+ 
+  <script >
+const members = ["Renas Albalwi ", "Lojain Alatwi", "Huda Alanzi"];
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const memberList = document.getElementById("member-list");
+
+const shuffledMembers = shuffleArray(members.slice());  
+shuffledMembers.forEach(member => {
+  const listItem = document.createElement("li");
+  listItem.textContent = member;
+  memberList.appendChild(listItem);
+});
+
+  </script>
+</body>
+</html>
